@@ -33,6 +33,7 @@ WSR = False
 
 def _find_natspeak():
     '''Tries to find the natspeak engine.'''
+    # Not sure if there are any problems with caster and 15 yet
     possible_locations = [
         "C:/Program Files (x86)/Nuance/NaturallySpeaking15/Program/natspeak.exe",
         "C:/Program Files (x86)/Nuance/NaturallySpeaking14/Program/natspeak.exe",
