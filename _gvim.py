@@ -572,17 +572,14 @@ class ExModeCommands(MappingRule):
 
         "help": Text("help"),
         "substitute": Text("s/"),
-        "up": Key("up"),
-        "down": Key("down"),
-        "[<n>] left": Key("left:%(n)d"),
-        "[<n>] right": Key("right:%(n)d"),
 
         # Eddit specific important files
         "eddit RC file": Text("tabe ~/.vimrc"),
 
         # Specific places
         "enter directory speach coding home": Text("/cygdrive/c/Users/omyers/Documents/NatLink"),
-        "enter directory computer home": Text("/cygdrive/c/Users/omyers/")
+        "enter directory computer home": Text("/cygdrive/c/Users/omyers/"),
+        "enter directory repositories home": Text("/cygdrive/c/Users/omyers/PortableHardDriveSynced/repositories")
     }
     extras = [
         Dictation("text"),
