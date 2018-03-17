@@ -271,9 +271,9 @@ class NormalModeKeystrokeRule(MappingRule):
 
         "next": Key("n"),
         "previous": Key("N"),
-        "[<n>] back": Key("b:%(n)d"),
-        "[<n>] whiskey": Key("w:%(n)d"),
-        "[<n>] end": Key("e:%(n)d"),
+        "brav [<n>]": Key("b:%(n)d"),
+        "whiskey [<n>]": Key("w:%(n)d"),
+        "echo [<n>]": Key("e:%(n)d"),
 
         "page center": Key("z,dot"),
         "text format": Key("g,q"),
@@ -283,56 +283,61 @@ class NormalModeKeystrokeRule(MappingRule):
         "a paragraph": Key("a,p"),
         "inner paragraph": Key("i,p"),
 
-        "[<n>] X.": Key("x:%(n)d"),
-        "[<n>] backspace": Key("backspace:%(n)d"),
+        "single [<n>]": Key("x:%(n)d"),
+        #"backspace [<n>]": Key("backspace:%(n)d"),
 
 
-        "[<n>] Pete macro": Key("at,at:%(n)d"),
+        "Pete macro [<n>]": Key("at,at:%(n)d"),
 
-        "[<n>] join": Key("J:%(n)d"),
+        "join [<n>]": Key("J:%(n)d"),
 
-        "(delete | D.)": Key("d"),
-        "[<n>] (delete | D.) (whiskey|word)": Text("%(n)ddw"),
-        "(delete | D.) a (whiskey | word)": Key("d,a,w"),
-        "(delete | D.) inner (whiskey | word)": Key("d,i,w"),
-        "(delete | D.) a paragraph": Key("d,a,p"),
-        "(delete | D.) inner paragraph": Key("d,i,p"),
-        "(delete | D.) a (paren|parenthesis|raip|laip)": Key("d,a,rparen"),
-        "(delete | D.) inner (paren|parenthesis|raip|laip)": Key("d,i,rparen"),
-        "(delete | D.) a (bracket|rack|lack)": Key("d,a,rbracket"),
-        "(delete | D.) inner (bracket|rack|lack)": Key("d,i,rbracket"),
-        "(delete | D.) a (bracket|race|lace)": Key("d,a,rbrace"),
-        "(delete | D.) inner (bracket|race|lace)": Key("d,i,rbrace"),
+        "delete": Key("d"),
+        "delete [<n>] (whiskey|word)": Text("%(n)ddw"),
+        "delete a (whiskey | word)": Key("d,a,w"),
+        "delete inner (whiskey | word)": Key("d,i,w"),
+        "delete a paragraph": Key("d,a,p"),
+        "delete inner paragraph": Key("d,i,p"),
+        "delete a (paren|parenthesis|raip|laip)": Key("d,a,rparen"),
+        "delete inner (raip|laip)": Key("d,i,rparen"),
+        "delete a (bracket|rack|lack)": Key("d,a,rbracket"),
+        "delete inner (bracket|rack|lack)": Key("d,i,rbracket"),
+        "delete a (bracket|race|lace)": Key("d,a,rbrace"),
+        "delete inner (bracket|race|lace)": Key("d,i,rbrace"),
 
-        "[<n>] (increment|increase)": Key("c-a:%(n)d"),
-        "[<n>] (decrement|decrease)": Key("c-x:%(n)d"),
+        #"[<n>] (increment|increase)": Key("c-a:%(n)d"),
+        #"[<n>] (decrement|decrease)": Key("c-x:%(n)d"),
 
-        "shift (delete | D.)": Key("s-d"),
-        "[<n>] rip line": Key("%(n)d,d,d"),
+        "shift delete": Key("s-d"),
+        "rip line [<n>]": Key("%(n)d,d,d"),
 
-        "[<n>] undo": Key("u:%(n)d"),
-        "[<n>] redo": Key("c-r:%(n)d"),
+        "undo [<n>]": Key("u:%(n)d"),
+        "redo [<n>]": Key("c-r:%(n)d"),
 
-        '[<n>] find <letter>': Text('%(n)df') + Function(executeLetter),
-        '[<n>] shift find <letter>': Text('%(n)dF') + Function(executeLetter),
+        #'[<n>] find <letter>': Text('%(n)df') + Function(executeLetter),
+        #'[<n>] shift find <letter>': Text('%(n)dF') + Function(executeLetter),
         'find [<n>] <letter>': Text('%(n)df') + Function(executeLetter),
         'shift find [<n>] <letter>': Text('%(n)dF') + Function(executeLetter),
 
-        '[<n>] again': Text('%(n)d;'),
-        '[<n>] shift again': Text('%(n)d,'),
+        #'[<n>] again': Text('%(n)d;'),
+        #'[<n>] shift again': Text('%(n)d,'),
 
-        '[<n>] until <letter>': Text('%(n)dt') + Function(executeLetter),
-        '[<n>] shift until <letter>': Text('%(n)dT') + Function(executeLetter),
+        #'[<n>] until <letter>': Text('%(n)dt') + Function(executeLetter),
+        #'[<n>] shift until <letter>': Text('%(n)dT') + Function(executeLetter),
         'until [<n>] <letter>': Text('%(n)dt') + Function(executeLetter),
         'shift until [<n>] <letter>': Text('%(n)dT') + Function(executeLetter),
 
-        "(yank | copy)": Key("y"),
-        "(yank | copy) a paragraph": Key("y,a,p"),
-        "(yank | copy) inner paragraph": Key("y,i,p"),
-        "(yank | copy) a (paren|parenthesis|raip|laip)": Key("y,a,rparen"),
-        "(yank | copy) inner (paren|parenthesis|raip|laip)": Key("y,i,rparen"),
-        "shift (yank | copy)": Key("Y"),
-        "copy line": Key("y,y"),
+        "yank": Key("y"),
+        "yank a paragraph": Key("y,a,p"),
+        "yank inner paragraph": Key("y,i,p"),
+        "yank a raip": Key("y,a,rparen"),
+        "yank inner raip": Key("y,i,rparen"),
+        "yank a rack": Key("y,a,rparen"),
+        "yank inner rack": Key("y,i,rbracket"),
+        "yank a race": Key("y,a,rparen"),
+        "yank inner race": Key("y,i,rbrace"),
+        "yank a rangle": Key("y,a,rparen"),
+        "yank inner rangle": Key("y,i,rangle"),
+        "yank line": Key("y,y"),
 
         "squirt": Key("p"),
         "sprout": Key("P"),
@@ -344,7 +349,6 @@ class NormalModeKeystrokeRule(MappingRule):
         "shift right": Key("rangle,rangle"),
 
         #"fuzzy find": Key("backslash,t"),
-        "search text": Key("slash"),
 
 	# Python specific macros that work together with certain plug-ins
 	
@@ -354,7 +358,7 @@ class NormalModeKeystrokeRule(MappingRule):
         # Pete is shorthand for repeat
         "[<n>] Pete": Key("dot:%(n)d"),
 
-        "mimic <text>": release + Mimic(extra="text"),
+        #"mimic <text>": release + Mimic(extra="text"),
     }
     extras   = [
         letter,
@@ -495,12 +499,14 @@ gvim_navigation_rule = MappingRule(
         "cursor (low | bottom)": Key("s-l"),
 
         # line navigation
-        "go <line>": Key("colon") + Text("%(line)s\n"),
+        "jump to line <line>": Key("colon") + Text("%(line)s\n"),
 
         # searching
-        "search <text>": Key("slash") + Text("%(text)s\n"),
+        #"search <text>": Key("slash") + Text("%(text)s\n"),
+        "search": Key("slash"),
         "search this": Key("asterisk"),
-        "back search <text>": Key("question") + Text("%(text)s\n"),
+        "search this up": Key("hash"),
+        "back search": Key("question") + Text("%(text)s\n"),
 
         },
     extras = [
@@ -568,13 +574,15 @@ class ExModeCommands(MappingRule):
         "set file type Python": Text("set filetype=python"),
         "set file type tex": Text("set filetype=tex"),
 
-        "P. W. D.": Text("pwd "),
+        "show me the working directory": Text("pwd \n"),
 
         "help": Text("help"),
         "substitute": Text("s/"),
+        "list all": Text("!ls -al "),
+        "list in file": Text("r!ls "),
 
         # Eddit specific important files
-        "eddit RC file": Text("tabe ~/.vimrc"),
+        "eddit configuration file": Text("tabe ~/.vimrc"),
 
         # Specific places
         "enter directory speach coding home": Text("/cygdrive/c/Users/omyers/Documents/NatLink"),
