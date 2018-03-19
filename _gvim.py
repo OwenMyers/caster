@@ -359,6 +359,12 @@ class NormalModeKeystrokeRule(MappingRule):
         "[<n>] Pete": Key("dot:%(n)d"),
 
         #"mimic <text>": release + Mimic(extra="text"),
+
+        "kapa sink": Key("A,escape,o"),
+        "kapa dock": Key("A,semicolon,escape,o"),
+        
+        "quick save": Key("colon,w,enter"),
+        "ZZ": Key("colon,Z,Z"),
     }
     extras   = [
         letter,
@@ -558,11 +564,6 @@ class ExModeDisabler(CompoundRule):
 # handles ExMode control structures
 class ExModeCommands(MappingRule):
     mapping  = {
-        "read": Text("r "),
-        "(write|save) file": Text("w "),
-        "quit": Text("q "),
-        "write and quit": Text("wq "),
-        "edit": Text("e "),
         "tab edit": Text("tabe "),
 
         "set number": Text("set number "),
@@ -607,15 +608,20 @@ class InsertModeEnabler(CompoundRule):
         "shift insert": "I",
 
         "change": "c",
-        "change whiskey": "c,w",
+        "change (word|whiskey)": "c,w",
         "change (echo|end)": "c,e",
         "change a paragraph": "c,a,p",
         "change inner paragraph": "c,i,p",
         "change a (paren|parenthesis|raip|laip)": "c,a,rparen",
         "change inner (paren|parenthesis|raip|laip)": "c,i,rparen",
+        "change a (bracket|rack|lack)": Key("d,a,rbracket"),
+        "change inner (bracket|rack|lack)": Key("d,i,rbracket"),
+        "change a (bracket|race|lace)": Key("d,a,rbrace"),
+        "change inner (bracket|race|lace)": Key("d,i,rbrace"),
         "shift change": "C",
 
-        "sub line" : "S",
+        "change line" : "S",
+        "change chair" : "s",
 
         "(after | append)": "a",
         "shift (after | append)": "A",
@@ -665,21 +671,24 @@ class InsertModeDisabler(CompoundRule):
 class InsertModeCommands(MappingRule):
     mapping  = {
         "<text>": Text("%(text)s"),
-        "[<n>] (scratch|delete)": Key("c-w:%(n)d"),
-        "[<n>] slap": Key("enter:%(n)d"),
-        "[<n>] tab": Key("tab:%(n)d"),
-        "[<n>] backspace": Key("backspace:%(n)d"),
+        "(scratch|delete) [<n>]": Key("c-w:%(n)d"),
+        "slap [<n>]": Key("enter:%(n)d"),
+        #"tab [<n>]": Key("tab:%(n)d"),
+        #"backspace [<n>]": Key("backspace:%(n)d"),
         "(scratch|delete) line": Key("c-u"),
-        "[<n>] left": Key("left:%(n)d"),
-        "[<n>] right": Key("right:%(n)d"),
 
-	"assign": Key("space,equal,space"),
-	"plus": Key("space,plus,space"),
-	"minus": Key("space,minus,space"),
-	"times": Key("space,asterisk,space"),
-	"equals": Key("space,equal,equal,space"),
-	"not equals": Key("space,exclamation,equal,space"),
-	"triple quote": Key("dquote,dquote,dquote"),
+        #Ultisnip stuff
+        "complete": Key("c-j"),
+        "snip next": Key("c-l"),
+        "snip previous": Key("c-h"),
+
+	#"assign": Key("space,equal,space"),
+	#"plus": Key("space,plus,space"),
+	#"minus": Key("space,minus,space"),
+	#"times": Key("space,asterisk,space"),
+	#"equals": Key("space,equal,equal,space"),
+	#"not equals": Key("space,exclamation,equal,space"),
+	#"triple quote": Key("dquote,dquote,dquote"),
 
 	# snippets for snipmate
 	#"new fixture": Key("f,i,x,tab"),
