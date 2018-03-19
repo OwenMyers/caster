@@ -89,43 +89,43 @@ class LetterRule(MappingRule):
         'yankee': Key('y', static=True),
         'zulu': Key('z', static=True),
 
-        'upper arch': Key('A', static=True),
-        'upper brav': Key('B', static=True),
-        'upper char': Key('C', static=True),
-        'upper delta': Key('D', static=True),
-        'upper echo': Key('E', static=True),
-        'upper foxy': Key('F', static=True),
-        'upper goof': Key('G', static=True),
-        'upper hotel': Key('H', static=True),
-        'upper india': Key('I', static=True),
-        'upper julia': Key('J', static=True),
-        'upper kilo': Key('K', static=True),
-        'upper lima': Key('L', static=True),
-        'upper mike': Key('M', static=True),
-        'upper novakeen': Key('N', static=True),
-        'upper oscar': Key('O', static=True),
-        'upper prime': Key('P', static=True),
-        'upper quebec': Key('Q', static=True),
-        'upper romeo': Key('R', static=True),
-        'upper sierra': Key('S', static=True),
-        'upper tango': Key('T', static=True),
-        'upper uniform': Key('U', static=True),
-        'upper victor': Key('V', static=True),
-        'upper whiskey': Key('W', static=True),
-        'upper x-ray': Key('X', static=True),
-        'upper yankee': Key('Y', static=True),
-        'upper zulu': Key('Z', static=True),
+        'shift arch': Key('A', static=True),
+        'shift brav': Key('B', static=True),
+        'shift char': Key('C', static=True),
+        'shift delta': Key('D', static=True),
+        'shift echo': Key('E', static=True),
+        'shift foxy': Key('F', static=True),
+        'shift goof': Key('G', static=True),
+        'shift hotel': Key('H', static=True),
+        'shift india': Key('I', static=True),
+        'shift julia': Key('J', static=True),
+        'shift kilo': Key('K', static=True),
+        'shift lima': Key('L', static=True),
+        'shift mike': Key('M', static=True),
+        'shift novakeen': Key('N', static=True),
+        'shift oscar': Key('O', static=True),
+        'shift prime': Key('P', static=True),
+        'shift quebec': Key('Q', static=True),
+        'shift romeo': Key('R', static=True),
+        'shift sierra': Key('S', static=True),
+        'shift tango': Key('T', static=True),
+        'shift uniform': Key('U', static=True),
+        'shift victor': Key('V', static=True),
+        'shift whiskey': Key('W', static=True),
+        'shift x-ray': Key('X', static=True),
+        'shift yankee': Key('Y', static=True),
+        'shift zulu': Key('Z', static=True),
 
-        'zero': Key('0'),
-        'one': Key('1'),
-        'two': Key('2'),
-        'three': Key('3'),
-        'four': Key('4'),
-        'five': Key('5'),
-        'six': Key('6'),
-        'seven': Key('7'),
-        'eight': Key('8'),
-        'nine': Key('9'),
+        #'zero': Key('0'),
+        #'one': Key('1'),
+        #'two': Key('2'),
+        #'three': Key('3'),
+        #'four': Key('4'),
+        #'five': Key('5'),
+        #'six': Key('6'),
+        #'seven': Key('7'),
+        #'eight': Key('8'),
+        #'nine': Key('9'),
 
         'ace': Key('space'),
         'tabby': Key('tab'),
@@ -291,27 +291,27 @@ class NormalModeKeystrokeRule(MappingRule):
 
         "join [<n>]": Key("J:%(n)d"),
 
-        "delete": Key("d"),
-        "delete [<n>] (whiskey|word)": Text("%(n)ddw"),
-        "delete a (whiskey | word)": Key("d,a,w"),
-        "delete inner (whiskey | word)": Key("d,i,w"),
-        "delete a paragraph": Key("d,a,p"),
-        "delete inner paragraph": Key("d,i,p"),
-        "delete a (paren|parenthesis|raip|laip)": Key("d,a,rparen"),
-        "delete inner (raip|laip)": Key("d,i,rparen"),
-        "delete a (bracket|rack|lack)": Key("d,a,rbracket"),
-        "delete inner (bracket|rack|lack)": Key("d,i,rbracket"),
-        "delete a (bracket|race|lace)": Key("d,a,rbrace"),
-        "delete inner (bracket|race|lace)": Key("d,i,rbrace"),
+        "rip": Key("d"),
+        "rip [<n>] (whiskey|word)": Text("%(n)ddw"),
+        "rip a (whiskey | word)": Key("d,a,w"),
+        "rip inner (whiskey | word)": Key("d,i,w"),
+        "rip a paragraph": Key("d,a,p"),
+        "rip inner paragraph": Key("d,i,p"),
+        "rip a (paren|parenthesis|raip|laip)": Key("d,a,rparen"),
+        "rip inner (raip|laip)": Key("d,i,rparen"),
+        "rip a (bracket|rack|lack)": Key("d,a,rbracket"),
+        "rip inner (bracket|rack|lack)": Key("d,i,rbracket"),
+        "rip a (bracket|race|lace)": Key("d,a,rbrace"),
+        "rip inner (bracket|race|lace)": Key("d,i,rbrace"),
 
         #"[<n>] (increment|increase)": Key("c-a:%(n)d"),
         #"[<n>] (decrement|decrease)": Key("c-x:%(n)d"),
 
-        "shift delete": Key("s-d"),
+        "shift rip": Key("s-d"),
         "rip line [<n>]": Key("%(n)d,d,d"),
 
-        "undo [<n>]": Key("u:%(n)d"),
-        "redo [<n>]": Key("c-r:%(n)d"),
+        "rice [<n>]": Key("u:%(n)d"),
+        "role [<n>]": Key("c-r:%(n)d"),
 
         #'[<n>] find <letter>': Text('%(n)df') + Function(executeLetter),
         #'[<n>] shift find <letter>': Text('%(n)dF') + Function(executeLetter),
@@ -365,6 +365,7 @@ class NormalModeKeystrokeRule(MappingRule):
         
         "quick save": Key("colon,w,enter"),
         "ZZ": Key("colon,Z,Z"),
+
     }
     extras   = [
         letter,
@@ -485,7 +486,7 @@ gvim_tabulator_rule = MappingRule(
 gvim_general_rule = MappingRule(
     name = "gvim_general",
     mapping = {
-        "cancel": Key("escape,u"),
+        "walk back": Key("escape,u"),
         },
     extras = [
         ]
@@ -527,7 +528,7 @@ gvim_navigation_rule = MappingRule(
 
 class ExModeEnabler(CompoundRule):
     # Spoken command to enable the ExMode grammar.
-    spec = "bitter butters"
+    spec = "enter command mode"
 
     # Callback when command is spoken.
     def _process_recognition(self, node, extras):
@@ -545,7 +546,6 @@ class ExModeDisabler(CompoundRule):
     # spoken command to exit ex mode
     spec = "<command>"
     extras = [Choice("command", {
-        "kay": "okay",
         "cancel": "cancel",
     })]
 
@@ -584,6 +584,10 @@ class ExModeCommands(MappingRule):
 
         # Eddit specific important files
         "eddit configuration file": Text("tabe ~/.vimrc"),
+
+        # Git stuff with "fugitive"
+        "fugitive status": Text("Gstatus"),
+        "fugitive commit": Text("Gcommit"),
 
         # Specific places
         "enter directory speach coding home": Text("/cygdrive/c/Users/omyers/Documents/NatLink"),
@@ -630,7 +634,7 @@ class InsertModeEnabler(CompoundRule):
         "shift oh": "O",
 
 	# Jedi vim rename command
-	"rename": "backslash,r",
+	#"rename": "backslash,r",
     })]
 
     def _process_recognition(self, node, extras):
@@ -650,8 +654,9 @@ class InsertModeDisabler(CompoundRule):
     # spoken command to exit InsertMode
     spec = "<command>"
     extras = [Choice("command", {
-        "kay": "okay",
         "cancel": "cancel",
+        "leave insert": "escape",
+        "escape": "escape"
     })]
 
     def _process_recognition(self, node, extras):
@@ -697,6 +702,48 @@ class InsertModeCommands(MappingRule):
 	#"new function": Key("d,e,f,tab"),
 	#"new while loop": Key("w,h,tab"),
 	#"new for loop": Key("f,o,r,tab"),
+
+        'zero': Key('0'),
+        'ane': Key('1'),
+        'twain': Key('2'),
+        'traio': Key('3'),
+        'fairn': Key('4'),
+        'faif': Key('5'),
+        'six': Key('6'),
+        'seven': Key('7'),
+        'eigen': Key('8'),
+        'nine': Key('9'),
+
+        'shift arch': Key('A', static=True),
+        'shift brav': Key('B', static=True),
+        'shift char': Key('C', static=True),
+        'shift delta': Key('D', static=True),
+        'shift echo': Key('E', static=True),
+        'shift foxy': Key('F', static=True),
+        'shift goof': Key('G', static=True),
+        'shift hotel': Key('H', static=True),
+        'shift india': Key('I', static=True),
+        'shift julia': Key('J', static=True),
+        'shift kilo': Key('K', static=True),
+        'shift lima': Key('L', static=True),
+        'shift mike': Key('M', static=True),
+        'shift novakeen': Key('N', static=True),
+        'shift oscar': Key('O', static=True),
+        'shift prime': Key('P', static=True),
+        'shift quebec': Key('Q', static=True),
+        'shift romeo': Key('R', static=True),
+        'shift sierra': Key('S', static=True),
+        'shift tango': Key('T', static=True),
+        'shift uniform': Key('U', static=True),
+        'shift victor': Key('V', static=True),
+        'shift whiskey': Key('W', static=True),
+        'shift x-ray': Key('X', static=True),
+        'shift yankee': Key('Y', static=True),
+        'shift zulu': Key('Z', static=True),
+
+
+
+
     }
     extras = [
         Dictation("text"),
@@ -736,6 +783,7 @@ InsertModeGrammar.add_rule(InsertModeCommands())
 InsertModeGrammar.add_rule(InsertModeDisabler())
 InsertModeGrammar.load()
 InsertModeGrammar.disable()
+
 
 
 
