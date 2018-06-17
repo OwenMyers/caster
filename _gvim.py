@@ -771,8 +771,10 @@ gvim_exec_context = AppContext(executable="gvim")
 # work.
 vim_putty_context = AppContext(title="vim")
 putty_context = AppContext(title="192.168.56.1 - PuTTY")
+#putty_context = AppContext(title="2. bash")
 debian_putty_context = AppContext(title="Debian")
-gvim_context = (gvim_exec_context | vim_putty_context | putty_context | debian_putty_context)
+pycharm_context = AppContext(title="PyCharm")
+gvim_context = (gvim_exec_context | vim_putty_context | putty_context | debian_putty_context | pycharm_context)
 
 # set up the grammar for vim's ex mode
 exModeBootstrap = Grammar("ExMode bootstrap", context=gvim_context)
