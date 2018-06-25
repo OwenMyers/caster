@@ -770,7 +770,7 @@ gvim_exec_context = AppContext(executable="gvim")
 # set the window title to vim in the putty session for the following context to
 # work.
 vim_putty_context = AppContext(title="vim")
-putty_context = AppContext(title="192.168.56.1 - PuTTY")
+putty_context = AppContext(title="10.211.55.2 - PuTTY")
 #putty_context = AppContext(title="2. bash")
 debian_putty_context = AppContext(title="Debian")
 pycharm_context = AppContext(title="PyCharm")
