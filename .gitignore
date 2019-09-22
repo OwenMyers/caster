@@ -1,7 +1,7 @@
 # Ignore junk
 .idea/
 *.pyc
-*.json
+*.toml
 *.wav
 *.class
 test.py
@@ -10,7 +10,15 @@ complexity_report*
 *.log
 *.*\#
 *.*~
+*.aux
+*.synctex.gz
 
+# Ignore Rope
+.ropeproject/
+
+# Ignoring Visual Studio (Code)
+.vs/
+.vscode/
 
 # Ignore Natlink
 /core/
@@ -24,3 +32,19 @@ complexity_report*
 # Ignore SonarQube
 .sonar
 sonar-project.properties
+
+# Ignore Eclipse/Pydev Files
+.project
+.pydevproject
+.settings
+
+# Ignore User Data
+caster/bin/data
+
+# Ignore dist files
+dist
+castervoice.egg-info
+/.stignore
+
+# Ignore Notepad++ backup files
+**/nppBackup
