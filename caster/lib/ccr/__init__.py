@@ -12,3 +12,5 @@ from javascript.javascript import Javascript
 from python.python import Python
 from rust.rust import Rust
 from sql.sql import SQL
+from vim.vim import Vim
+from tmux.tmux import Tmux

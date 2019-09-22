@@ -24,7 +24,7 @@ def _apply(n):
         Text("stash@{"+str(int(n))+"}").execute()
 
 class GitBashRule(MergeRule):
-    pronunciation = "git bash"
+    pronunciation = "bash navigation"
 
     mapping = {
         "initialize repository":       Text( "git init" )+Key("enter"),
